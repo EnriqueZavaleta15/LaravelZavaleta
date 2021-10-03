@@ -14,14 +14,14 @@ class ComputadoraController extends Controller
         
         $registro=Computador::get();    
         //return $registro;
-        return view ('computadora.computadora',compact ('registro'));
+        return view ('Computadora.computadora',compact ('registro'));
 
     }
 
 
     public function create()
     {
-        return view ('computadora.registro');
+        return view ('Computadora.registro');
     }
 
 
@@ -64,13 +64,16 @@ class ComputadoraController extends Controller
 
     public function edit($id)
     {
-        //
+      $IdCompu=Computador::findOrFail($id);
+      return view ('Computadora.editar',compact('IdCompu'));
+      //return $IdCompu;
+        // return 'el id del registro es'.$id;
     }
 
 
     public function update(Request $request, $id)
     {
-        //
+        return $request;
     }
 
 

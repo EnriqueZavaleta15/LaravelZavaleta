@@ -62,7 +62,7 @@
                 <td>{{$registros->com_fecha}}</td>
                 <td>{{$registros->com_precio}}</td>
               <td>
-                  <a class="btn btn-sm btn-info" href=""><i class="fas fa-pencil-alt"></i> </a>
+                  <a class="btn btn-sm btn-info" href="{{route('computadora.edit',$registros->id)}}"><i class="fas fa-pencil-alt"></i> </a>
                   <a class="btn btn-sm btn-danger" href=""><i class="fas fa-trash-alt"></i> </a>
               </td>
             </tr>
