@@ -19,7 +19,7 @@
           <a href="{{url('computadora/create')}}" class="btn btn-sm btn-success" >Registrar computadoras <i class="fas fa-plus"></i></a>
 
 
-            <div class="row">
+            <div>
                 @if(Session('exito'))
                 <div class="alert alert-success">
                       {{session('exito')}}
@@ -63,7 +63,7 @@
                 <td>{{$registros->com_precio}}</td>
               <td>
                   <a class="btn btn-sm btn-info" href="{{route('computadora.edit',$registros->id)}}"><i class="fas fa-pencil-alt"></i> </a>
-                  <a class="btn btn-sm btn-danger" href=""><i class="fas fa-trash-alt"></i> </a>
+                  <a class="btn btn-sm btn-danger" href="{{route('computadora.show',$registros->id)}}"><i class="fas fa-trash-alt"></i> </a>
               </td>
             </tr>
 

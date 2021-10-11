@@ -59,26 +59,55 @@ class ComputadoraController extends Controller
  
     public function show($id)
     {
-        //
+        $IdCompu=Computador::findOrFail($id);
+        return view ('Computadora.eliminar',compact('IdCompu'));
     }
 
     public function edit($id)
     {
       $IdCompu=Computador::findOrFail($id);
       return view ('Computadora.editar',compact('IdCompu'));
-      //return $IdCompu;
+     
         // return 'el id del registro es'.$id;
     }
 
 
     public function update(Request $request, $id)
     {
-        return $request;
+        $IdCompu=Computador::findOrFail($id);
+
+
+        $IdCompu->com_marca=$request->txt_marca;
+        $IdCompu->com_modelo=$request->txt_modelo;
+        $IdCompu->com_serie=$request->txt_serie;
+        $IdCompu->com_nombre=$request->txt_nombre;
+        $IdCompu->com_descripcion=$request->txt_descripcion;
+        $IdCompu->com_fecha=$request->txt_fecha;
+        $IdCompu->com_precio=$request->txt_precio;
+
+
+        if ($IdCompu-> save()) {
+            Session::flash('exito', 'Se ha Actualizado correctamente');
+            return Redirect::to ('computadora');
+        }
+       else {
+           Session::flash('error','Ocurrio un problema, verifique');
+           return Redirect::to ('computadora/'.$id.'/edit');
+       }
+     
+        
+        //return $request;
     }
 
 
     public function destroy($id)
     {
-        //
+
+    Computador::destroy($id);
+    Session::flash('exito', 'Se elimino correctamente');
+            return Redirect::to ('computadora');
+
+
+
     }
 }

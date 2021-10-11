@@ -13,7 +13,7 @@
      <h2>Editar Computadoras</h2>
      <hr>
 
- <div class="row">
+                <div>
                @if(Session('exito'))
                <div class="alert alert-success">
                     {{session('exito')}}
