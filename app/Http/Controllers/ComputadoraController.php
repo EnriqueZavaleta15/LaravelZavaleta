@@ -28,7 +28,16 @@ class ComputadoraController extends Controller
     public function store(Request $request)
     {
        // return $request;
+        $request->validate([
+            'txt_marca'=>'required',
+            'txt_modelo'=>'required',
+            'txt_serie'=>'required',
+            'txt_nombre'=>'required',
+            'txt_fecha'=>'required',
+            'txt_precio'=>'required'
+        ]);
 
+        
 
        $BdRegistrar=new Computador;
 

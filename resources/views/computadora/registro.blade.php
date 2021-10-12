@@ -36,31 +36,62 @@
           
                <div class="form-group">
                     <label for="exampleInputEmail1">Marca</label>
-                    <input type="text" class="form-control" id="txt_marca" name="txt_marca" required >
+                    <input type="text" class="form-control" id="txt_marca" name="txt_marca">
+                    @error('txt_marca')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Modelo</label>
-                    <input type="text" class="form-control" id="txt_modelo" name="txt_modelo" required >
+                    <input type="text" class="form-control" id="txt_modelo" name="txt_modelo">
+                    @error('txt_modelo')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Serie</label>
-                    <input type="text" class="form-control" id="txt_serie" name="txt_serie"required >
+                    <input type="text" class="form-control" id="txt_serie" name="txt_serie">
+                    @error('txt_serie')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Nombre</label>
-                    <input type="text" class="form-control" id="txt_nombre" name="txt_nombre" required>
+                    <input type="text" class="form-control" id="txt_nombre" name="txt_nombre">
+                    @error('txt_nombre')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Descripcion</label>
                     <input type="text" class="form-control" id="txt_descripcion" name="txt_descripcion">
+                    
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Fecha</label>
-                    <input type="date" class="form-control" id="txt_fecha" name="txt_fecha"required >
+                    <input type="date" class="form-control" id="txt_fecha" name="txt_fecha">
+                    @error('txt_fecha')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <div class="form-group">
                     <label for="exampleInputEmail1">Precio</label>
-                    <input type="text" class="form-control" id="txt_precio" name="txt_precio" required>
+                    <input type="text" class="form-control" id="txt_precio" name="txt_precio" >
+                    @error('txt_precio')
+                         <span class="error" role="alert" style="color:#80339f">
+                              <strong>{{ $message }}</strong>
+                         </span>
+                    @enderror
                </div>
                <button type="submit" class="btn btn-primary">Registrar <i class="fas fa-check-square"></i></button>
                <a href="{{url('computadora')}}" class="btn btn-danger btn-sm">Atras</a>
